@@ -2,22 +2,22 @@
 
 ## script 标签 defer 和 async 的区别
 
-> 相同点：`async` 和 `defer` 下载都不会阻塞 HTML 解析
-> 不同点：`async` 下载完成后立即执行，不会等待 HTML 解析完成；`defer` 会等待 HTML 解析完成再执行
+- 相同点：`async` 和 `defer` 下载都不会阻塞 HTML 解析
+- 不同点：`async` 下载完成后立即执行，不会等待 HTML 解析完成；`defer` 会等待 HTML 解析完成再执行
 
-<!-- ![](/images/front-end/interview/javascript/legend.svg) -->
+![](./images/javascript/legend.svg)
 
 **`<script>`**
 
-<!-- ![script](/images/front-end/interview/javascript/script.svg) -->
+![script](./images/javascript/script.svg)
 
 **`<script async>`**
 
-<!-- ![script async](/images/front-end/interview/javascript/script-async.svg) -->
+![script async](./images/javascript/script-async.svg)
 
 **`<script defer>`**
 
-<!-- ![script defer](/images/front-end/interview/javascript/script-defer.svg) -->
+![script defer](./images/javascript/script-defer.svg)
 
 ## Object.is() 与比较运算符 ==、=== 的区别
 
