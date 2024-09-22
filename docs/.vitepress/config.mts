@@ -1,28 +1,44 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
+  title: "点解我最型の博客",
   description: "A VitePress Site",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+
+    search: {
+      provider: "local",
+    },
+
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
+    },
+
+    outline: {
+      label: "页面导航",
+      level: [2, 3],
+    },
+
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: "常用网站", link: "/link" },
+      { text: "面试", link: "/interview/html" },
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
+    sidebar: {
+      "/interview/": {
+        base: "/interview",
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+          { text: "HTML", link: "/html" },
+          { text: "CSS", link: "/css" },
+          { text: "JavaScript", link: "/javascript" },
+        ],
+      },
+    },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+    ],
+  },
+});
