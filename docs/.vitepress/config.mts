@@ -24,6 +24,7 @@ export default defineConfig({
     nav: [
       { text: "常用网站", link: "/link" },
       { text: "面试", link: "/interview/html" },
+      { text: "生活", link: "/life/proverb" },
     ],
 
     sidebar: {
@@ -33,6 +34,17 @@ export default defineConfig({
           { text: "HTML", link: "/html" },
           { text: "CSS", link: "/css" },
           { text: "JavaScript", link: "/javascript" },
+        ],
+      },
+      "/life/": {
+        base: "/life",
+        items: [
+          { text: "好词好句", link: "/proverb" },
+          { text: "羽毛球", link: "/badminton" },
+          {
+            text: "爬山",
+            items: [{ text: "梧桐山", link: "/mountain/wutong-mountain" }],
+          },
         ],
       },
     },
