@@ -124,6 +124,8 @@
 
 ## 设计
 
+[花瓣网](https://huaban.com/)
+
 [Scrollbar --- 滚动条样式](https://scrollbar.app/)
 
 [Lucide --- Lucide-icons](https://lucide.dev/)
