@@ -120,6 +120,8 @@
 
 [AST Explorer --- 抽象树转换](https://astexplorer.net/)
 
+[Wappalyzer](https://www.wappalyzer.com/)
+
 ## 设计
 
 [Scrollbar --- 滚动条样式](https://scrollbar.app/)
