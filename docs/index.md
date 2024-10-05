@@ -31,4 +31,8 @@ features:
     title: 常用网站
     details: 常用网站收录
     link: /link
+  - icon: 📚
+    title: 后端
+    details: 后端学习笔记
+    link: /back-end/python/pyside
 ---

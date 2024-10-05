@@ -23,6 +23,7 @@ export default defineConfig({
 
     nav: [
       { text: "前端", link: "/front-end/es6/destructuring" },
+      { text: "后端", link: "/back-end/python/pyside" },
       { text: "生活", link: "/life/proverb" },
       { text: "面试", link: "/interview/html" },
       { text: "常用网站", link: "/link" },
@@ -129,6 +130,15 @@ export default defineConfig({
           {
             text: "Electron",
             link: "/electron",
+          },
+        ],
+      },
+      "/back-end/": {
+        base: "/back-end",
+        items: [
+          {
+            text: "Python",
+            items: [{ text: "Pyside", link: "/python/pyside" }],
           },
         ],
       },

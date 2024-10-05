@@ -122,6 +122,8 @@
 
 [Wappalyzer](https://www.wappalyzer.com/)
 
+[Zeal --- API 离线文档库](https://zealdocs.org/)
+
 ## 设计
 
 [花瓣网](https://huaban.com/)
