@@ -41,6 +41,8 @@ if __name__ == '__main__':
 
 ## 三种最基础控件
 
+按钮、标签、输入框
+
 ```py
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QLineEdit
 
