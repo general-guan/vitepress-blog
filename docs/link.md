@@ -82,6 +82,8 @@
 
 [Vitepress](https://vitepress.dev/zh/)
 
+[vitepress-plugin-mermaid](https://emersonbottero.github.io/vitepress-plugin-mermaid/)
+
 [Docusaurus](https://docusaurus.io/zh-CN/)
 
 [Astro](https://docs.astro.build/zh-cn/getting-started/)
@@ -123,6 +125,8 @@
 [Wappalyzer](https://www.wappalyzer.com/)
 
 [Zeal --- API 离线文档库](https://zealdocs.org/)
+
+[Mermaid --- Markdown 图表工具](https://mermaid.nodejs.cn/)
 
 ## 设计
 
