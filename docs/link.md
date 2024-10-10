@@ -88,7 +88,7 @@
 
 [Astro](https://docs.astro.build/zh-cn/getting-started/)
 
-[Hogo](https://gohugo.io/)
+[Hugo](https://gohugo.io/)
 
 [Hexo](https://hexo.io/zh-cn/)
 
