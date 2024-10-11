@@ -131,6 +131,10 @@ export default defineConfig({
             text: "Electron",
             link: "/electron",
           },
+          {
+            text: "Nginx",
+            link: "/nginx/index",
+          },
         ],
       },
       "/back-end/": {
