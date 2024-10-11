@@ -133,7 +133,11 @@ export default defineConfig({
           },
           {
             text: "Nginx",
-            link: "/nginx/index",
+            link: "/nginx",
+          },
+          {
+            text: "Zustand",
+            link: "/zustand",
           },
         ],
       },
