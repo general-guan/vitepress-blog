@@ -70,3 +70,23 @@ if __name__ == '__main__':
     app.exec()
 
 ```
+
+## 使用静态编译的文件
+
+```py
+from PySide6.QtWidgets import QApplication, QMainWindow,QPushButton
+from login import Ui_Form
+
+class MyWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
+
+if __name__ == '__main__':
+    app = QApplication([])
+    window = MyWindow()
+    window.show()
+    app.exec()
+```
