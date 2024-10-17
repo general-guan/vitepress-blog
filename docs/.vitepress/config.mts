@@ -139,6 +139,10 @@ export default defineConfig({
             text: "Zustand",
             link: "/zustand",
           },
+          {
+            text: "Prettier",
+            link: "/prettier",
+          },
         ],
       },
       "/back-end/": {
