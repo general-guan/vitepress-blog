@@ -1,5 +1,10 @@
 # JavaScript
 
+## JavaScript 的数据类型
+
+- 基本数据类型：`Number`、`String`、`Boolean`、`Undefined`、`Null`、`Symbol`、`BigInt`
+- 引用数据类型：`Object`
+
 ## script 标签 defer 和 async 的区别
 
 - 相同点：`async` 和 `defer` 下载都不会阻塞 HTML 解析

@@ -89,7 +89,10 @@ export default defineConfig({
           {
             text: "ES6",
             collapsed: true,
-            items: [{ text: "变量的解构赋值", link: "/es6/destructuring" }],
+            items: [
+              { text: "变量的解构赋值", link: "/es6/destructuring" },
+              { text: "Symbol", link: "/es6/symbol" },
+            ],
           },
           {
             text: "Vue-Router",
