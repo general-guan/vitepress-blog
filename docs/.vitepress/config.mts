@@ -95,6 +95,10 @@ export default defineConfig({
                     text: "事件模型",
                     link: "/javascript/events/model",
                   },
+                  {
+                    text: "Event 对象",
+                    link: "/javascript/events/event",
+                  },
                 ],
               },
             ],
