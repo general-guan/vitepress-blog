@@ -110,3 +110,125 @@ btn.addEventListener(
   false
 );
 ```
+
+## 事件的传播
+
+一个事件发生后，会在子元素和父元素之间传播（propagation）。这种传播分成三个阶段
+
+- **第一阶段**：从 `window` 对象传导到目标节点（上层传到底层），称为“捕获阶段”（capture phase）
+- **第二阶段**：在目标节点上触发，称为“目标阶段”（target phase）
+- **第三阶段**：从目标节点传导回 `window` 对象（从底层传回上层），称为“冒泡阶段”（bubbling phase）
+
+这种三阶段的传播模型，使得同一个事件会在多个节点上触发
+
+```html
+<div>
+  <p>点击</p>
+</div>
+```
+
+如果对这两个节点，都设置 `click` 事件的监听函数（每个节点的捕获阶段和冒泡阶段，各设置一个监听函数），共计设置四个监听函数。然后，对 `<p>` 点击，`click` 事件会触发四次
+
+```js
+var phases = {
+  1: "capture",
+  2: "target",
+  3: "bubble",
+};
+
+var div = document.querySelector("div");
+var p = document.querySelector("p");
+
+div.addEventListener("click", callback, true);
+p.addEventListener("click", callback, true);
+div.addEventListener("click", callback, false);
+p.addEventListener("click", callback, false);
+
+function callback(event) {
+  var tag = event.currentTarget.tagName;
+  var phase = phases[event.eventPhase];
+  console.log("Tag: '" + tag + "'. EventPhase: '" + phase + "'");
+}
+
+// 点击以后的结果
+// Tag: 'DIV'. EventPhase: 'capture'
+// Tag: 'P'. EventPhase: 'target'
+// Tag: 'P'. EventPhase: 'target'
+// Tag: 'DIV'. EventPhase: 'bubble'
+```
+
+上面代码表示，`click` 事件被触发了四次：`<div>` 节点的捕获阶段和冒泡阶段各 1 次，`<p>` 节点的目标阶段触发了 2 次
+
+1. 捕获阶段：事件从 `<div>` 向 `<p>` 传播时，触发 `<div>` 的 `click` 事件
+2. 目标阶段：事件从 `<div>` 到达 `<p>` 时，触发 `<p>` 的 `click` 事件
+3. 冒泡阶段：事件从 `<p>` 传回 `<div>` 时，再次触发 `<div>` 的 `click` 事件
+
+注意，浏览器总是假定 `click` 事件的目标节点，就是点击位置嵌套最深的那个节点（本例是 `<div>` 节点里面的 `<p>` 节点）。所以，`<p>` 节点的捕获阶段和冒泡阶段，都会显示为 `target` 阶段
+
+事件传播的最上层对象是 `window`，接着依次是 `document`，`html`（`document.documentElement`）和`body`（`document.body`）。也就是说，上例的事件传播顺序，在捕获阶段依次为 `window`、`document`、`html`、`body`、`div`、`p`，在冒泡阶段依次为 `p`、`div`、`body`、`html`、`document`、`window`
+
+## 事件的代理
+
+由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）
+
+```js
+var ul = document.querySelector("ul");
+
+ul.addEventListener("click", function (event) {
+  if (event.target.tagName.toLowerCase() === "li") {
+    // some code
+  }
+});
+```
+
+上面代码中，`click` 事件的监听函数定义在 `<ul>` 节点，但是实际上，它处理的是子节点 `<li>` 的 `click` 事件。这样做的好处是，只要定义一个监听函数，就能处理多个子节点的事件，而不用在每个 `<li>` 节点上定义监听函数。而且以后再添加子节点，监听函数依然有效
+
+如果希望事件到某个节点为止，不再传播，可以使用事件对象的 `stopPropagation` 方法
+
+```js
+// 事件传播到 p 元素后，就不再向下传播了
+p.addEventListener(
+  "click",
+  function (event) {
+    event.stopPropagation();
+  },
+  true
+);
+
+// 事件冒泡到 p 元素后，就不再向上冒泡了
+p.addEventListener(
+  "click",
+  function (event) {
+    event.stopPropagation();
+  },
+  false
+);
+```
+
+但是，`stopPropagation` 方法只会阻止事件的传播，不会阻止该事件触发 `<p>` 节点的其他 `click` 事件的监听函数。也就是说，不是彻底取消 `click` 事件
+
+```js
+p.addEventListener("click", function (event) {
+  event.stopPropagation();
+  console.log(1);
+});
+
+p.addEventListener("click", function (event) {
+  // 会触发
+  console.log(2);
+});
+```
+
+如果想要彻底取消该事件，不再触发后面所有 `click` 的监听函数，可以使用 `stopImmediatePropagation` 方法
+
+```js
+p.addEventListener("click", function (event) {
+  event.stopImmediatePropagation();
+  console.log(1);
+});
+
+p.addEventListener("click", function (event) {
+  // 不会被触发
+  console.log(2);
+});
+```
