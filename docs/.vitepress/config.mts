@@ -88,6 +88,10 @@ export default defineConfig({
                 text: "事件",
                 items: [
                   {
+                    text: "EventTarget 接口",
+                    link: "/javascript/events/eventtarget",
+                  },
+                  {
                     text: "事件模型",
                     link: "/javascript/events/model",
                   },
