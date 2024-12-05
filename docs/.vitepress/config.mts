@@ -101,6 +101,15 @@ export default defineConfig({
                   },
                 ],
               },
+              {
+                text: "浏览器模型",
+                items: [
+                  {
+                    text: "Storage 接口",
+                    link: "/javascript/bom/storage",
+                  },
+                ],
+              },
             ],
           },
           {
