@@ -108,6 +108,10 @@ export default defineConfig({
                     text: "Storage 接口",
                     link: "/javascript/bom/storage",
                   },
+                  {
+                    text: "History 对象",
+                    link: "/javascript/bom/history",
+                  },
                 ],
               },
             ],
