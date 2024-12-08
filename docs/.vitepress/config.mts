@@ -125,6 +125,16 @@ export default defineConfig({
             ],
           },
           {
+            text: "React",
+            collapsed: true,
+            items: [
+              {
+                text: "API",
+                items: [{ text: "memo", link: "/react/api/memo" }],
+              },
+            ],
+          },
+          {
             text: "Vue-Router",
             link: "/vue-router",
           },
