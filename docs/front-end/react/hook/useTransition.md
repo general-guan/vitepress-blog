@@ -10,7 +10,7 @@ const [isPending, startTransition] = useTransition();
 
 ### useTransition()
 
-在组件顶层调用 `useTransition`，将某些状态更新标记为 transition。
+在组件顶层调用 `useTransition`，将某些状态更新标记为 transition
 
 ```jsx
 import { useTransition } from "react";
