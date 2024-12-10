@@ -129,6 +129,12 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
+                text: "Hook",
+                items: [
+                  { text: "useTransition", link: "/react/hook/useTransition" },
+                ],
+              },
+              {
                 text: "API",
                 items: [{ text: "memo", link: "/react/api/memo" }],
               },
