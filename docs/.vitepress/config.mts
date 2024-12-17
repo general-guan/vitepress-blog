@@ -73,6 +73,10 @@ export default defineConfig({
                     text: "属性描述对象",
                     link: "/javascript/stdlib/attributes",
                   },
+                  {
+                    text: "Array 对象",
+                    link: "/javascript/stdlib/array",
+                  },
                 ],
               },
               {
