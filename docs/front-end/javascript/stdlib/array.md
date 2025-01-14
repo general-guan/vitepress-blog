@@ -84,3 +84,37 @@ a; // [1, 2]
 ) {
   // ... ...
 ```
+
+如果要对累积变量指定初值，可以把它放在 `reduce()` 方法和 `reduceRight()` 方法的第二个参数
+
+```js
+[1, 2, 3, 4, 5].reduce(function (a, b) {
+  return a + b;
+}, 10);
+// 25
+```
+
+建议总是加上第二个参数，这样比较符合直觉，每个数组成员都会依次执行 `reduce()` 方法的参数函数。另外，第二个参数可以防止空数组报错
+
+```js
+function add(prev, cur) {
+  return prev + cur;
+}
+
+[].reduce(add)
+// TypeError: Reduce of empty array with no initial value
+[].reduce(add, 1)
+// 1
+```
+
+下面是一个 `reduceRight()` 方法的例子
+
+```js
+function subtract(prev, cur) {
+  return prev - cur;
+}
+
+[3, 2, 1]
+  .reduce(subtract) // 0
+  [(3, 2, 1)].reduceRight(subtract); // -4
+```
