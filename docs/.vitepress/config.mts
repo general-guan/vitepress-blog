@@ -196,6 +196,16 @@ export default defineConfig({
             text: "Prettier",
             link: "/prettier",
           },
+          {
+            text: "设计模式",
+            collapsed: true,
+            items: [
+              {
+                text: "发布订阅模式",
+                link: "/design-pattern/publish-subscribe-pattern",
+              },
+            ],
+          },
         ],
       },
       "/back-end/": {
