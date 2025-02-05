@@ -83,6 +83,10 @@ export default defineConfig({
                 text: "面向对象编程",
                 items: [
                   {
+                    text: "this 关键字",
+                    link: "/javascript/oop/this",
+                  },
+                  {
                     text: "对象的继承",
                     link: "/javascript/oop/prototype",
                   },
