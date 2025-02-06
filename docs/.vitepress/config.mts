@@ -37,6 +37,7 @@ export default defineConfig({
             text: "业务",
             collapsed: true,
             items: [
+              { text: "图片懒加载", link: "/business/image-lazy-loading" },
               { text: "PDF 常见处理", link: "/business/pdf-common-handle" },
             ],
           },
@@ -133,6 +134,14 @@ export default defineConfig({
             ],
           },
           {
+            text: "Vue",
+            collapsed: true,
+            items: [
+              { text: "Vue-Router", link: "/vue/vue-router" },
+              { text: "Pinia", link: "/vue/pinia" },
+            ],
+          },
+          {
             text: "React",
             collapsed: true,
             items: [
@@ -147,10 +156,6 @@ export default defineConfig({
                 items: [{ text: "memo", link: "/react/api/memo" }],
               },
             ],
-          },
-          {
-            text: "Vue-Router",
-            link: "/vue-router",
           },
           {
             text: "Vite",

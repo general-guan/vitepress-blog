@@ -8,6 +8,8 @@
 
 [AIchatOS](https://chat18.aichatos.xyz)
 
+[DeepSeek](https://chat.deepseek.com/)
+
 ## 翻译
 
 [有道翻译](https://fanyi.youdao.com/#/TextTranslate)
@@ -78,6 +80,16 @@
 
 [Grid 布局教程 - 阮一峰的网络日志](https://ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
+## 论坛
+
+[CSDN](https://www.csdn.net/)
+
+[博客园](https://www.cnblogs.com/)
+
+[掘金](https://juejin.cn/)
+
+[StackOverflow](https://stackoverflow.com/)
+
 ## 静态博客生成器
 
 [Vitepress](https://vitepress.dev/zh/)
@@ -128,6 +140,18 @@
 
 [Mermaid --- Markdown 图表工具](https://mermaid.nodejs.cn/)
 
+[VSCode](https://code.visualstudio.com/)
+
+[Webstorm](https://www.jetbrains.com/webstorm/)
+
+[JetBrain 破解](https://3.jetbra.in/)
+
+[IDEA 激活码](https://www.ajihuo.com/)
+
+[Snipaste](https://www.snipaste.com/)
+
+[Lodop 打印](https://www.lodop.net/)
+
 ## 设计
 
 [花瓣网](https://huaban.com/)
@@ -139,6 +163,18 @@
 [Wallpaper Abyss --- 壁纸网站](https://wall.alphacoders.com/)
 
 [Emoji --- emo 表情](https://www.emojiall.com/zh-hans)
+
+[阿里巴巴矢量图标库](https://www.iconfont.cn/)
+
+[Icon SVG](https://iconscout.com/)
+
+[Icônes](https://icones.js.org/)
+
+[颜色配合](https://mycolor.space/)
+
+[Comic Mono 字体](https://dtinth.github.io/comic-mono-font/)
+
+[SVG 插画](https://undraw.co/illustrations)
 
 ## 面试
 
