@@ -199,7 +199,7 @@ export default defineConfig({
           },
           {
             text: "浏览器缓存",
-            link: "/browser-cache",
+            link: "/browser-cache/",
           },
           {
             text: "Zustand",
