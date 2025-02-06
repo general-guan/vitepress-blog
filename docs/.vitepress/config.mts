@@ -193,6 +193,10 @@ export default defineConfig({
             link: "/nginx",
           },
           {
+            text: "浏览器缓存",
+            link: "/browser-cache",
+          },
+          {
             text: "Zustand",
             link: "/zustand",
           },
