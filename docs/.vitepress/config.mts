@@ -134,6 +134,11 @@ export default defineConfig({
             ],
           },
           {
+            text: "Web API",
+            collapsed: true,
+            items: [{ text: "Fetch API", link: "/web-api/fetch" }],
+          },
+          {
             text: "Vue",
             collapsed: true,
             items: [
