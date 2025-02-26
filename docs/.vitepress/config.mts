@@ -121,6 +121,10 @@ export default defineConfig({
                     text: "History 对象",
                     link: "/javascript/bom/history",
                   },
+                  {
+                    text: "Blob 对象",
+                    link: "/javascript/bom/blob",
+                  },
                 ],
               },
             ],
