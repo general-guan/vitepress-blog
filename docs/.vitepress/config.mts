@@ -122,8 +122,16 @@ export default defineConfig({
                     link: "/javascript/bom/history",
                   },
                   {
+                    text: "ArrayBuffer",
+                    link: "/javascript/bom/arraybuffer",
+                  },
+                  {
                     text: "Blob 对象",
                     link: "/javascript/bom/blob",
+                  },
+                  {
+                    text: "File 对象，FileList 对象，FileReader 对象",
+                    link: "/javascript/bom/file",
                   },
                 ],
               },
