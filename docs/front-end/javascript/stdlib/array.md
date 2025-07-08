@@ -1,5 +1,7 @@
 # Array 对象
 
+![](./array-methods.excalidraw.svg)
+
 ## 实例方法
 
 ### splice()
