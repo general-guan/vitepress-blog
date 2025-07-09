@@ -584,9 +584,8 @@ a.lastIndexOf(7); // -1
 注意，这两个方法不能用来搜索 `NaN` 的位置，即它们无法确定数组成员是否包含 `NaN`。
 
 ```js
-[NaN]
-  .indexOf(NaN) // -1
-  [NaN].lastIndexOf(NaN); // -1
+[NaN].indexOf(NaN); // -1
+[NaN].lastIndexOf(NaN); // -1
 ```
 
 这是因为这两个方法内部，使用严格相等运算符（`===`）进行比较，而 `NaN` 是唯一一个不等于自身的值。
@@ -594,3 +593,7 @@ a.lastIndexOf(7); // -1
 ## 参考链接
 
 [Array 对象 - JavaScript 教程 - 网道](https://wangdoc.com/javascript/stdlib/array)
+
+[数组的扩展 - ECMAScript 6 入门](https://es6.ruanyifeng.com/)
+
+[数组方法 - 现代 JavaScript 教程](https://zh.javascript.info/array-methods)
