@@ -76,7 +76,7 @@ export default defineConfig({
                   },
                   {
                     text: "Array 对象",
-                    link: "/javascript/stdlib/array",
+                    link: "/javascript/stdlib/array/",
                   },
                 ],
               },
