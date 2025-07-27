@@ -39,6 +39,7 @@ export default defineConfig({
             items: [
               { text: "图片懒加载", link: "/business/image-lazy-loading" },
               { text: "PDF 常见处理", link: "/business/pdf-common-handle" },
+              { text: "Viewport 视口", link: "/business/viewport" },
             ],
           },
           {
