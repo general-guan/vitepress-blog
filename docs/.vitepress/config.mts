@@ -79,6 +79,10 @@ export default defineConfig({
                     text: "Array 对象",
                     link: "/javascript/stdlib/array/",
                   },
+                  {
+                    text: "Set 和 Map 数据结构",
+                    link: "/javascript/stdlib/set-map",
+                  },
                 ],
               },
               {
