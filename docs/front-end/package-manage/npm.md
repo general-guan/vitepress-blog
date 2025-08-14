@@ -1,8 +1,8 @@
 # NPM
 
-## 切换淘宝源
+## 常用
 
-**全局设置**
+### 换源
 
 ```bash
 npm config get registry # 查看当前源
@@ -10,7 +10,15 @@ npm config set registry https://registry.npmmirror.com/
 npm config delete registry # 还原源
 ```
 
-**局部设置**
+### 全局安装
+
+```bash
+npm config get prefix # 查看 npm 全局安装地址
+npm list --depth 0 -g # 查看全局安装
+npm uninstall -g <package> # 卸载全局安装
+```
+
+## 局部设置
 
 `.npmrc`
 

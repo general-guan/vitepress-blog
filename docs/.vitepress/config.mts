@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-
+const a = 1;
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "点解我最型の博客",
@@ -34,12 +34,23 @@ export default defineConfig({
         base: "/front-end",
         items: [
           {
+            text: "书籍",
+            collapsed: true,
+            items: [
+              {
+                text: "代码整洁的 JavaScript",
+                link: "/book/clean-code-javascript",
+              },
+            ],
+          },
+          {
             text: "业务",
             collapsed: true,
             items: [
               { text: "图片懒加载", link: "/business/image-lazy-loading" },
               { text: "PDF 常见处理", link: "/business/pdf-common-handle" },
               { text: "Viewport 视口", link: "/business/viewport" },
+              { text: "单点登录 SSO", link: "/business/sso" },
             ],
           },
           {
@@ -200,8 +211,18 @@ export default defineConfig({
             link: "/github",
           },
           {
-            text: "NPM",
-            link: "/npm",
+            text: "包管理",
+            collapsed: true,
+            items: [
+              {
+                text: "NPM",
+                link: "/package-manage/npm",
+              },
+              {
+                text: "Monorepo",
+                link: "/package-manage/monorepo",
+              },
+            ],
           },
           {
             text: "Bun",
