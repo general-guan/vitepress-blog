@@ -18,15 +18,15 @@ CAS 框架：CAS（Central Authentication Service）是实现 SSO 单点登录�
 
 一、第一次访问系统 A
 
-1. 用户访问系统 A（[www.appA.com](www.appA.com)）， 跳转认证中心 Client（[www.sso.com](www.sso.com)）， 然后输入用户名、密码登录，然后认证中心 serverSSO 把 `cookieSSO` 种在认证中心的域名下（[www.sso.com](www.sso.com)）， 重定向到系统 A，并且带上生成的 `ticket` 参数 ([www.appA.com?ticket=xxx](www.appA.com?ticket=xxx)）
-2. 系统 A（[www.appA.com?ticket=xxx](www.appA.com?ticket=xxx)）请求系统 A 的后端 serverA ，serverA 去 serverSSO 验证，通过后，将 `cookieA` 种在 [www.appA.com](www.appA.com) 下
+1. 用户访问系统 A（[www.appA.com](https://www.appA.com)）， 跳转认证中心 Client（[www.sso.com](https://www.sso.com)）， 然后输入用户名、密码登录，然后认证中心 serverSSO 把 `cookieSSO` 种在认证中心的域名下（[www.sso.com](https://www.sso.com)）， 重定向到系统 A，并且带上生成的 `ticket` 参数 ([www.appA.com?ticket=xxx](https://www.appA.com?ticket=xxx)）
+2. 系统 A（[www.appA.com?ticket=xxx](https://www.appA.com?ticket=xxx)）请求系统 A 的后端 serverA ，serverA 去 serverSSO 验证，通过后，将 `cookieA` 种在 [www.appA.com](https://www.appA.com) 下
 
 二、第二次访问系统 A 直接携带 `cookieA` 去访问后端，验证通过后，即登录成功
 
 三、第三次访问系统 B
 
-1. 访问系统 B（[www.appB.com](www.appB.com)），跳转到认证中心 Client（[www.sso.com](www.sso.com)）， 这个时候会把认证中心的 cookieSSO 也携带上，发现用户已登录过，则直接重定向到系统 B（[www.appB.com](www.appB.com)）， 并且带上生成的 `ticket` 参数（[www.appB.com?ticket=xxx](www.appB.com?ticket=xxx)）
-2. 系统 B（[www.appB.com?ticket=xxx](www.appB.com?ticket=xxx)）请求系统 B 的后端 serverB，serverB 去 serverSSO 验证，通过后，将 `cookieB` 种在 [www.appB.com](www.appB.com) 下
+1. 访问系统 B（[www.appB.com](https://www.appB.com)），跳转到认证中心 Client（[www.sso.com](https://www.sso.com)）， 这个时候会把认证中心的 cookieSSO 也携带上，发现用户已登录过，则直接重定向到系统 B（[www.appB.com](https://www.appB.com)）， 并且带上生成的 `ticket` 参数（[www.appB.com?ticket=xxx](https://www.appB.com?ticket=xxx)）
+2. 系统 B（[www.appB.com?ticket=xxx](https://www.appB.com?ticket=xxx)）请求系统 B 的后端 serverB，serverB 去 serverSSO 验证，通过后，将 `cookieB` 种在 [www.appB.com](https://www.appB.com) 下
 
 ## 参考地址
 
