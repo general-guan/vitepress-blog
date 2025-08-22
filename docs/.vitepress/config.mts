@@ -51,6 +51,10 @@ export default defineConfig({
               { text: "PDF 常见处理", link: "/business/pdf-common-handle" },
               { text: "Viewport 视口", link: "/business/viewport" },
               { text: "单点登录 SSO", link: "/business/sso" },
+              {
+                text: "跨页面通信",
+                link: "/business/cross-page-communication",
+              },
             ],
           },
           {
