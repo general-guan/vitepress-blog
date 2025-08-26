@@ -283,6 +283,7 @@ export default defineConfig({
           { text: "HTML", link: "/html" },
           { text: "CSS", link: "/css" },
           { text: "JavaScript", link: "/javascript" },
+          { text: "Vue", link: "/vue" },
         ],
       },
       "/life/": {
