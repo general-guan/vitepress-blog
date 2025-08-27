@@ -88,3 +88,115 @@ JS 是一门单线程的语言，这是因为他运行在浏览器的渲染主�
 过去把消息队列简单分为宏队列和微队列，这种说法目前已无法满足复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式
 
 根据 W3C 官方的解释，每个任务有不同的类型，同类型的任务必须在同一个队列，不同类型的任务可以属于不同的队列，不同任务队列有不同的优先级，在一次事件循环中，由浏览器自行决定取哪一个队列的任务，但浏览器必须有一个微队列，微队列的任务一定有最高的优先级，必须优先调度执行
+
+### 一道面试题
+
+```js
+async function async1() {
+  console.log("async1 start");
+  await async2();
+  console.log("async1 end");
+}
+
+async function async2() {
+  console.log("async2");
+}
+
+console.log("script start");
+
+setTimeout(function () {
+  console.log("setTimeOut");
+}, 0);
+
+async1();
+
+new Promise(function (resolve) {
+  console.log("promise1");
+  resolve();
+}).then(function () {
+  console.log("promise2");
+});
+
+console.log("script end");
+```
+
+::: details 运行结果
+
+```js
+// script start
+// async1 start
+// async2
+// promise1
+// script end
+// async1 end
+// promise2
+// setTimeOut
+```
+
+:::
+
+### 同步任务和异步任务
+
+因为 JavaScript 是单线程运行的，所有的任务只能在主线程上排队执行；但是如果某个任务特别耗时，比如 Ajax 请求一个接口，可能 1s 返回结果，也可能 10s 才返回，有很多的不确定因素（网络延迟等）；如果这些任务也放到主线程中去，那么会阻塞浏览器（用户除了等，不能进行其他操作）。
+
+于是，浏览器就把这些任务分派到异步任务队列中去。先来看简单的例子来理解一下同步和异步任务：
+
+```js
+console.log("start");
+
+setTimeout(function () {
+  console.log("setTimeout");
+}, 0);
+
+console.log("end");
+```
+
+当主线程执行到 `setTimeout` 的时候，虽然是延迟了 0s，但是并不会马上来运行，而是放到异步任务队列中，等下面的同步任务队列执行完了，再来执行异步队列中的任务，所以运行结果是：start、end、setTimeout。
+
+但如果同步任务中有特别耗时的操作，阻塞了 `setTimeout` 的定时执行，那么 `setTimeout` 就不会按时来完成。来看下面的例子：
+
+```js
+console.log("start");
+console.time("now");
+let list = [];
+
+setTimeout(function () {
+  console.timeEnd("now");
+}, 1000);
+
+for (let i = 0; i < 9999999; i++) {
+  let now = new Date();
+  list.push(i);
+}
+```
+
+虽然我们让 `setTimeout` 1s 后执行，但是 for 循环占用了太多的线程资源，实际执行会在 2s 后。所以事件循环的流程大致如下：
+
+1. 所有任务都在主线程上执行，形成一个执行栈。
+2. 主线程发现有异步任务，就在“任务队列”之中加入一个任务事件。
+3. 一旦“执行栈”中的所有同步任务执行完毕，系统就会读取“任务队列”（先进先出原则）。那些对应的异步任务，结束等待状态，进入执行栈并开始执行。
+4. 主线程不断重复上面的第三步，这样的一个循环称为事件循环。
+
+### 宏任务与微任务
+
+如果任务队列中有多个异步任务，那么先执行哪个任务呢？于是在异步任务中，也进行了等级划分，分为宏任务（macrotask）和微任务（microtask）；不同的 API 注册的任务会依次进入自身对应的队列中，然后等待事件循环将它们依次压入执行栈中执行。
+
+宏任务包括：
+
+- script(整体代码)
+- setTimeout, setInterval, setImmediate,
+- I/O
+- UI rendering
+
+微任务包括：
+
+- process.nextTick
+- Promise
+- MutationObserver
+
+我们可以把整体的 JS 代码也看成是一个宏任务，主线程也是从宏任务开始的。我们把上面事件循环的步骤更新一下：
+
+1. 执行一个宏任务
+2. 执行过程中如果遇到微任务就加入微任务队列，遇到宏任务就加入宏任务队列
+3. 宏任务执行完毕后，检查当前微任务队列，如果有，就依次执行（一轮事件循环结束）
+4. 开始下一个宏任务
